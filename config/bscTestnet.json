@@ -1,0 +1,36 @@
+{
+    "key": "bscTestnet",
+    "network": "bscTestnet",
+    "factory_address": "0xA3460C72E4Eb6C1851007fAc59bD37dB04056dA4",
+    "factory": {
+        "address": "0xA3460C72E4Eb6C1851007fAc59bD37dB04056dA4",
+        "startBlock": "10634494"
+    },
+    "nf_position_manager": {
+        "address": "0x093E4cdd0d4344FA90D28FC0ff0F142b3Aa4b855",
+        "startBlock": "10799345"
+    },
+    "sel_token_address": "0x46bF747DeAC87b5db70096d9e88debd72D4C7f3C",
+    "weth_address": "0x8babbb98678facc7342735486c851abd7a0d17ca",
+    "wnative_address": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+    "native_address": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+    "sel_wnative_pool": "0x951E9534E6EC75b2FAcc1aa68187B401E6d707E4",
+    "dai_wnative_pool": "0xFFb2EFeDB10168bb488ddA237fc2b6e4D2F64f3d",
+    "usdt_wnative_pool": "0xAb1F298Abb75580b325E77720568B11c035FFF85",
+    "busd_wnative_pool": "0x544FA7E95aB63eA0576a114653cE0ea57E895112",
+    "usdc_wnative_pool": "0xBF400a7B22f869f6736BC8725Cb47814501030FE",
+    "dai_address": "0xEC5dCb5Dbf4B114C9d0F65BcCAb49EC54F6A0867",
+    "usdt_address": "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd",
+    "busd_address": "0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee",
+    "usdc_address": "0x64544969ed7ebf5f083679233325356ebe738930",
+    "minimum_liquidity_threshold_eth": "30",
+    "minimum_usd_threshold_new_pools": "1000",
+    "whitelist_tokens": [
+        "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+        "0x46bF747DeAC87b5db70096d9e88debd72D4C7f3C",
+        "0xEC5dCb5Dbf4B114C9d0F65BcCAb49EC54F6A0867",
+        "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd",
+        "0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee",
+        "0x64544969ed7ebf5f083679233325356ebe738930"
+    ]
+}

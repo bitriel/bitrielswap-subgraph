@@ -1,0 +1,17 @@
+{
+  "name": "const",
+  "version": "1.0.0",
+  "description": "constants",
+  "license": "MIT",
+  "main": "index.ts",
+  "private": true,
+  "keywords": [
+    "constant"
+  ],
+  "scripts": {
+    "codegen": "true",
+    "build": "true",
+    "prepare:bscTestnet": "mustache ../../config/bscTestnet.json index.template.ts > index.ts",
+    "prepare:rinkeby": "mustache ../../config/rinkeby.json index.template.ts > index.ts"
+  }
+}
