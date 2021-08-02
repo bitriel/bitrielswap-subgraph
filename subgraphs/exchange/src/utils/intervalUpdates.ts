@@ -1,7 +1,8 @@
-import { ZERO_BD, ZERO_BI, ONE_BI } from './constants'
+import { ZERO_BD, ZERO_BI, ONE_BI, FACTORY_ADDRESS } from 'const'
 /* eslint-disable prefer-const */
 import {
-  UniswapDayData,
+  HourData,
+  DayData,
   Factory,
   Pool,
   PoolDayData,
@@ -12,32 +13,56 @@ import {
   PoolHourData,
   TickDayData,
   Tick
-} from './../types/schema'
-import { FACTORY_ADDRESS } from './constants'
+} from '../types/schema'
 import { ethereum } from '@graphprotocol/graph-ts'
 
 /**
  * Tracks global aggregate data over daily windows
  * @param event
  */
-export function updateUniswapDayData(event: ethereum.Event): UniswapDayData {
-  let uniswap = Factory.load(FACTORY_ADDRESS)
+export function updateDayData(event: ethereum.Event): DayData {
+  let factory = Factory.load(FACTORY_ADDRESS)
   let timestamp = event.block.timestamp.toI32()
   let dayID = timestamp / 86400 // rounded
   let dayStartTimestamp = dayID * 86400
-  let uniswapDayData = UniswapDayData.load(dayID.toString())
-  if (uniswapDayData === null) {
-    uniswapDayData = new UniswapDayData(dayID.toString())
-    uniswapDayData.date = dayStartTimestamp
-    uniswapDayData.volumeETH = ZERO_BD
-    uniswapDayData.volumeUSD = ZERO_BD
-    uniswapDayData.volumeUSDUntracked = ZERO_BD
-    uniswapDayData.feesUSD = ZERO_BD
+  let dayData = DayData.load(dayID.toString())
+  if (dayData === null) {
+    dayData = new DayData(dayID.toString())
+    dayData.date = dayStartTimestamp
+    dayData.volumeETH = ZERO_BD
+    dayData.volumeUSD = ZERO_BD
+    dayData.volumeUSDUntracked = ZERO_BD
+    dayData.feesUSD = ZERO_BD
   }
-  uniswapDayData.tvlUSD = uniswap.totalValueLockedUSD
-  uniswapDayData.txCount = uniswap.txCount
-  uniswapDayData.save()
-  return uniswapDayData as UniswapDayData
+  dayData.tvlUSD = factory.totalValueLockedUSD
+  dayData.txCount = factory.txCount
+  dayData.save()
+  return dayData as DayData
+}
+
+
+/**
+ * Tracks global aggregate data over hourly windows
+ * @param event
+ */
+ export function updateHourData(event: ethereum.Event): DayData {
+  let factory = Factory.load(FACTORY_ADDRESS)
+  let timestamp = event.block.timestamp.toI32()
+  let hourID = timestamp / 3600 // rounded
+  let hourStartTimestamp = hourID * 3600
+  let hourData = HourData.load(hourID.toString())
+  if (hourData === null) {
+    hourData = new HourData(hourID.toString())
+    hourData.date = hourStartTimestamp
+    hourData.volumeETH = ZERO_BD
+    hourData.volumeUSD = ZERO_BD
+    hourData.volumeUSDUntracked = ZERO_BD
+    hourData.feesUSD = ZERO_BD
+  }
+  hourData.tvlUSD = factory.totalValueLockedUSD
+  hourData.txCount = factory.txCount
+  hourData.save()
+  return hourData as HourData
 }
 
 export function updatePoolDayData(event: ethereum.Event): PoolDayData {

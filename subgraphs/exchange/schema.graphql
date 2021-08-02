@@ -31,7 +31,7 @@ type Factory @entity {
 # stores for USD calculations
 type Bundle @entity {
   id: ID!
-  # price of ETH in usd
+  # price of native token in usd
   ethPriceUSD: BigDecimal!
 }
 
@@ -431,21 +431,41 @@ type Flash @entity {
   logIndex: BigInt
 }
 
-# Data accumulated and condensed into day stats for all of Uniswap
-type UniswapDayData @entity {
+# Data accumulated and condensed into day stats
+type DayData @entity {
   # timestamp rounded to current day by dividing by 86400
   id: ID!
   # timestamp rounded to current day by dividing by 86400
   date: Int!
-  # total daily volume in Uniswap derived in terms of ETH
+  # total daily volume in derived in terms of ETH
   volumeETH: BigDecimal!
-  # total daily volume in Uniswap derived in terms of USD
+  # total daily volume in derived in terms of USD
   volumeUSD: BigDecimal!
-  # total daily volume in Uniswap derived in terms of USD untracked
+  # total daily volume in derived in terms of USD untracked
   volumeUSDUntracked: BigDecimal!
   # fees in USD
   feesUSD: BigDecimal!
   # number of daily transactions
+  txCount: BigInt!
+  # tvl in terms of USD
+  tvlUSD: BigDecimal!
+}
+
+# Data accumulated and condensed into hourly stats
+type HourData @entity {
+  # timestamp rounded to current hour by dividing by 3600
+  id: ID!
+  # timestamp rounded to current hour by dividing by 3600
+  date: Int!
+  # total hourly volume in derived in terms of ETH
+  volumeETH: BigDecimal!
+  # total hourly volume in derived in terms of USD
+  volumeUSD: BigDecimal!
+  # total hourly volume in derived in terms of USD untracked
+  volumeUSDUntracked: BigDecimal!
+  # fees in USD
+  feesUSD: BigDecimal!
+  # number of hourly transactions
   txCount: BigInt!
   # tvl in terms of USD
   tvlUSD: BigDecimal!

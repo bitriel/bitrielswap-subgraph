@@ -69,7 +69,7 @@ export function fetchTokenTotalSupply(tokenAddress: Address): BigInt {
   if (!totalSupplyResult.reverted) {
     totalSupplyValue = totalSupplyResult as i32
   }
-  return BigInt.fromI32(totalSupplyValue as i32)
+  return BigInt.fromI32(totalSupplyValue as i32) 
 }
 
 export function fetchTokenDecimals(tokenAddress: Address): BigInt {
@@ -87,5 +87,5 @@ export function fetchTokenDecimals(tokenAddress: Address): BigInt {
     }
   }
 
-  return BigInt.fromI32(decimalValue as i32)
+  return BigInt.fromI32(decimalValue as i32) 
 }
