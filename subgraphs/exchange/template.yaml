@@ -1,6 +1,6 @@
 specVersion: 0.0.1
 description: Exchange
-repository: https://github.com/hangleang/bitrielswap-subgraph
+repository: https://github.com/bitriel/bitrielswap-subgraph
 schema:
   file: ./schema.graphql
 dataSources:

@@ -13,8 +13,8 @@
     "remove-local": "graph remove /bitriel/bitrielswap --node http://127.0.0.1:8020/ ",
     "deploy-local": "graph deploy /bitriel/bitrielswap --debug --ipfs http://127.0.0.1:5001 --node http://127.0.0.1:8020",
 
-    "deploy:bscTestnet": "graph deploy hangleang/bsc-testnet-exchange --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
-    "deploy:rinkeby": "graph deploy hangleang/rinkeby-exchange --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
+    "deploy:bscTestnet": "graph deploy bitriel/bsc-testnet-exchange --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
+    "deploy:rinkeby": "graph deploy bitriel/rinkeby-exchange --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
 
     "prepare:bscTestnet": "mustache ../../config/bscTestnet.json template.yaml > subgraph.yaml",
     "prepare:rinkeby": "mustache ../../config/rinkeby.json template.yaml > subgraph.yaml"
