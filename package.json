@@ -1,9 +1,8 @@
 {
-  "name": "dev-bitrielswap-subgraph",
-  "version": "1.0.1",
-  "repository": "https://github.com/hangleang/dev-bitrielswap-subgraph",
+  "name": "@bitriel/bitrielswap-subgraph",
+  "version": "1.0.0",
+  "repository": "https://github.com/bitriel/bitrielswap-subgraph.git",
   "license": "GPL-3.0-or-later",
-  "private": true,
   "workspaces": [
     "packages/*",
     "subgraphs/*"
